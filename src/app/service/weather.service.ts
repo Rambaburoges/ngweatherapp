@@ -31,7 +31,7 @@ constructor(private http:HttpClient) { }
       .set('appid','4b6ace8bc7f3e409085737e30732fef7')
     }), 
        switchMap((values:any)=>{
-      return this.http.get('http://api.openweathermap.org/data/2.5/weather',{params:values})
+      return this.http.get('https://api.openweathermap.org/data/2.5/weather',{params:values})
     })
     )
   }
