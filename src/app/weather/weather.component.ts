@@ -124,29 +124,20 @@ getLocation(){
 }
 
 searchcity(){
-console.log(this.searchWeatherForm.value);
 this.weatherService.getWeatherData(this.searchWeatherForm.value.city).subscribe((d:any) =>{
-  console.log(d);
   this.weatherName = d.name;
-  console.log(this.weatherName);
   this.weatherTemp = d.main.temp; 
   this.feels_like = d.main.feels_like;
-  console.log(this.feels_like)
   this.weatherHumditity = d.main.humidity;
 
 this.weatherData = d.weather;
-console.log("len",this.weatherData)
-console.log(this.weatherData)
 })
 }
 searchcityOne(){
   this.weatherService.getWeatherData(this.searchWeatherForm1.value.cityOne).subscribe((d:any) =>{
-         console.log(d);
          this.weatherNameOne = d.name;
-         console.log(this.weatherName);
          this.weatherTempOne = d.main.temp; 
          this.feels_likeOne = d.main.feels_like;
-         console.log(this.feels_like)
          this.weatherHumditityOne = d.main.humidity;  
        this.weatherDataOne = d.weather;
        this.weatherType = this.weatherDataOne[0].main;
@@ -170,111 +161,77 @@ searchcityOne(){
 
 searchCity2(){
   this.weatherService.getWeatherData(this.searchWeatherForm2.value.cityTwo).subscribe((d:any) =>{
-    console.log(d);
     this.weatherNameTwo = d.name;
-    console.log(this.weatherName);
     this.weatherTempTwo = d.main.temp; 
     this.feels_likeTwo = d.main.feels_like;
-    console.log(this.feels_like)
     this.weatherHumditityTwo = d.main.humidity;
   
   this.weatherDataTwo = d.weather;
-  console.log(this.weatherDataTwo)
   })
 }
 
 searchCity3(){
   this.weatherService.getWeatherData(this.searchWeatherForm3.value.cityThree).subscribe((d:any) =>{
-    console.log(d);
     this.weatherNameThree = d.name;
-    console.log(this.weatherName);
     this.weatherTempThree = d.main.temp; 
     this.feels_likeThree = d.main.feels_like;
-    console.log(this.feels_like)
     this.weatherHumditityThree = d.main.humidity;
   
   this.weatherDataThree = d.weather;
-  console.log("len",this.weatherData)
-  console.log(this.weatherData)
   })
 }
 
 searchCity4(){
   this.weatherService.getWeatherData(this.searchWeatherForm4.value.cityFour).subscribe((d:any) =>{
-    console.log(d);
     this.weatherNameFour = d.name;
-    console.log(this.weatherName);
     this.weatherTempFour = d.main.temp; 
     this.feels_likeFour = d.main.feels_like;
-    console.log(this.feels_like)
     this.weatherHumditityFour = d.main.humidity;
   
   this.weatherDataFour = d.weather;
-  console.log("len",this.weatherData)
-  console.log(this.weatherData)
   })
 }
 
 searchCity5(){
   this.weatherService.getWeatherData(this.searchWeatherForm5.value.cityFive).subscribe((d:any) =>{
-    console.log(d);
     this.weatherNameFive = d.name;
-    console.log(this.weatherName);
     this.weatherTempFive = d.main.temp; 
     this.feels_likeFive = d.main.feels_like;
-    console.log(this.feels_like)
     this.weatherHumditityFive = d.main.humidity;
   
   this.weatherDataFive = d.weather;
-  console.log("len",this.weatherData)
-  console.log(this.weatherData)
   })
 }
 
 searchCity6(){
   this.weatherService.getWeatherData(this.searchWeatherForm6.value.citySix).subscribe((d:any) =>{
-    console.log(d);
     this.weatherNameSix = d.name;
-    console.log(this.weatherName);
     this.weatherTempSix = d.main.temp; 
     this.feels_likeSix = d.main.feels_like;
-    console.log(this.feels_like)
     this.weatherHumdititySix = d.main.humidity;
   
   this.weatherDataSix = d.weather;
-  console.log("len",this.weatherData)
-  console.log(this.weatherData)
   })
 }
 
 searchCity7(){
   this.weatherService.getWeatherData(this.searchWeatherForm7.value.citySeven).subscribe((d:any) =>{
-    console.log(d);
     this.weatherNameSeven = d.name;
-    console.log(this.weatherName);
     this.weatherTempSeven = d.main.temp; 
     this.feels_likeSeven = d.main.feels_like;
-    console.log(this.feels_like)
     this.weatherHumdititySeven = d.main.humidity;
   
   this.weatherDataSeven = d.weather;
-  console.log("len",this.weatherData)
-  console.log(this.weatherData)
   })
 }
 searchCity8(){
   this.weatherService.getWeatherData(this.searchWeatherForm8.value.cityEight).subscribe((d:any) =>{
-    console.log(d);
     this.weatherNameEight = d.name;
-    console.log(this.weatherName);
     this.weatherTempEight = d.main.temp; 
     this.feels_likeEight = d.main.feels_like;
-    console.log(this.feels_like)
     this.weatherHumditityEight = d.main.humidity;
   
   this.weatherDataEight = d.weather;
-  console.log("len",this.weatherData)
-  console.log(this.weatherData)
   })
 }
 
