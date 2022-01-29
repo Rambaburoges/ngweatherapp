@@ -1,0 +1,392 @@
+<div class="container">
+    <div class="row rowcss">
+        <div class="col-md-4">
+             <div class="card">
+                 <form [formGroup]="searchWeatherForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" #input placeholder="Enter City Name"  formControlName="city" aria-describedby="emailHelp">
+                        <button *ngIf="input.value.length > 0" class="btncss" (click)="searchcity()" >
+                            Search
+                        </button> 
+                    </div>
+                 </form>
+                 <div class="content">
+                     <div *ngIf="weatherData?.length > 0;else noWeather;" >
+                         <div *ngFor = "let data of weatherData;" class="d-flex align-items-center justify-content-center">
+                            <div>
+                                <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                            </div>
+                            <p class="main-text">{{data.main}}</p>
+                        </div>
+                        <div>
+                            <p class="weather-name text-center">{{weatherName}} {{feels_like}} &#176;F</p>
+                        </div>
+                        <div class="d-flex justify-content-evenly">
+                            <div class="weather-main">
+                            <p class="">Humditity</p>
+                            <h6>{{weatherHumditity}} %</h6>
+                            </div>
+                            <div class="weather-main">
+                                <p>Temperature</p>
+                                <h6>{{weatherTemp | number:'1.0-0'}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 
+            <ng-template #noWeather class="content d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center" style="height:100%">
+                 <h6 class="text-white">No Data Found</h6>
+                </div>
+            </ng-template>
+             </div>
+        </div> 
+        
+         <div class="col-md-4">
+            <div class="card">
+                <div class="card">
+                    <form [formGroup]="searchWeatherForm1">
+                       <div class="mb-3">
+                           <input type="text" class="form-control" #inputOne placeholder="Enter City Name"  formControlName="cityOne" aria-describedby="emailHelp">
+                           <button *ngIf="inputOne.value.length > 0" class="btncss" (click)="searchcityOne()" >
+                               Search
+                           </button> 
+                       </div>
+                    </form>
+                    <div class="content" >
+                        <div *ngIf="weatherDataOne?.length > 0;else noWeatherOne" >
+                            <div *ngFor = "let data of weatherData;" class="d-flex align-items-center justify-content-center">
+                               <div>
+                                   <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                               </div>
+                               <p class="main-text">{{data.main}}</p>
+                           </div>
+                           <div>
+                               <p class="weather-name text-center">{{weatherNameOne}} {{feels_likeOne}} &#176;F</p>
+                           </div>
+                           <div class="d-flex justify-content-evenly">
+                               <div class="weather-main">
+                               <p class="">Humditity</p>
+                               <h6>{{weatherHumditityOne}} %</h6>
+                               </div>
+                               <div class="weather-main">
+                                   <p>Temperature</p>
+                                   <h6>{{weatherTempOne | number:'1.0-0'}}</h6>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                    
+            <ng-template #noWeatherOne class="content d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center" style="height:100%">
+                 <h6 class="text-white">No Data Found</h6>
+                </div>
+            </ng-template>
+                </div>
+            </div>
+        </div>
+        
+         <div class="col-md-4">
+            <div class="card">
+                <div class="card">
+                    <form [formGroup]="searchWeatherForm2">
+                       <div class="mb-3">
+                           <input type="text" class="form-control" #inputTwo placeholder="Enter City Name"  formControlName="cityTwo" aria-describedby="emailHelp">
+                           <button *ngIf="inputTwo.value.length > 0" class="btncss" (click)="searchCity2()" >
+                               Search
+                           </button> 
+                       </div>
+                    </form>
+                    <div class="content" >
+                        <div *ngIf="weatherDataTwo?.length > 0;else noWeatherTwo" >
+                            <div *ngFor = "let data of weatherDataTwo;" class="d-flex align-items-center justify-content-center">
+                               <div>
+                                   <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                               </div>
+                               <p class="main-text">{{data.main}}</p>
+                           </div>
+                           <div>
+                               <p class="weather-name text-center">{{weatherNameTwo}} {{feels_likeTwo}} &#176;F</p>
+                           </div>
+                           <div class="d-flex justify-content-evenly">
+                               <div class="weather-main">
+                               <p class="">Humditity</p>
+                               <h6>{{weatherHumditityTwo}} %</h6>
+                               </div>
+                               <div class="weather-main">
+                                   <p>Temperature</p>
+                                   <h6>{{weatherTempTwo | number:'1.0-0'}}</h6>
+                               </div>
+                           </div>
+                       </div>
+                        <p></p>
+                    </div>
+                    
+            <ng-template #noWeatherTwo class="content d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center" style="height:100%">
+                 <h6 class="text-white">No Data Found</h6>
+                </div>
+            </ng-template>
+                </div>
+            </div>
+        </div> 
+    </div>
+     <div class="row rowcss">
+        <div class="col-md-4">
+            <div class="card">
+                <form [formGroup]="searchWeatherForm3">
+                   <div class="mb-3">
+                       <input type="text" class="form-control" #inputThree placeholder="Enter City Name"  formControlName="cityThree" aria-describedby="emailHelp">
+                       <button *ngIf="inputThree.value.length > 0" class="btncss" (click)="searchCity3()" >
+                           Search
+                       </button> 
+                   </div>
+                </form>
+                <div class="content" >
+                    <div *ngIf="weatherDataThree?.length > 0;else noWeatherThree" >
+                        <div *ngFor = "let data of weatherDataThree;" class="d-flex align-items-center justify-content-center">
+                           <div>
+                               <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                           </div>
+                           <p class="main-text">{{data.main}}</p>
+                       </div>
+                       <div>
+                           <p class="weather-name text-center">{{weatherNameThree}} {{feels_likeThree}} &#176;F</p>
+                       </div>
+                       <div class="d-flex justify-content-evenly">
+                           <div class="weather-main">
+                           <p class="">Humditity</p>
+                           <h6>{{weatherHumditityThree}} %</h6>
+                           </div>
+                           <div class="weather-main">
+                               <p>Temperature</p>
+                               <h6>{{weatherTempThree | number:'1.0-0'}}</h6>
+                           </div>
+                       </div>
+                   </div>
+                    <p></p>
+                </div>
+                
+            <ng-template #noWeatherThree class="content d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center" style="height:100%">
+                 <h6 class="text-white">No Data Found</h6>
+                </div>
+            </ng-template>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <form [formGroup]="searchWeatherForm4">
+                   <div class="mb-3">
+                       <input type="text" class="form-control" #inputFour placeholder="Enter City Name"  formControlName="cityFour" aria-describedby="emailHelp">
+                       <button *ngIf="inputFour.value.length > 0" class="btncss" (click)="searchCity4()" >
+                           Search
+                       </button> 
+                   </div>
+                </form>
+                <div class="content" >
+                    <div *ngIf="weatherDataFour?.length > 0;else noWeatherFour" >
+                        <div *ngFor = "let data of weatherDataFour;" class="d-flex align-items-center justify-content-center">
+                           <div>
+                               <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                           </div>
+                           <p class="main-text">{{data.main}}</p>
+                       </div>
+                       <div>
+                           <p class="weather-name text-center">{{weatherNameFour}} {{feels_likeFour}} &#176;F</p>
+                       </div>
+                       <div class="d-flex justify-content-evenly">
+                           <div class="weather-main">
+                           <p class="">Humditity</p>
+                           <h6>{{weatherHumditityFour}} %</h6>
+                           </div>
+                           <div class="weather-main">
+                               <p>Temperature</p>
+                               <h6>{{weatherTempFour | number:'1.0-0'}}</h6>
+                           </div>
+                       </div>
+                   </div>
+                    <p></p>
+                </div>
+                
+            <ng-template #noWeatherFour class="content d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center" style="height:100%"> 
+                 <h6 class="text-white">No Data Found</h6>
+                </div>
+            </ng-template>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <form [formGroup]="searchWeatherForm5">
+                   <div class="mb-3">
+                       <input type="text" class="form-control" #inputFive placeholder="Enter City Name"  formControlName="cityFive" aria-describedby="emailHelp">
+                       <button *ngIf="inputFive.value.length > 0" class="btncss" (click)="searchCity5()" >
+                           Search
+                       </button> 
+                   </div>
+                </form>
+                <div class="content" >
+                    <div *ngIf="weatherDataFive?.length > 0;else noWeatherFive" >
+                        <div *ngFor = "let data of weatherDataFive;" class="d-flex align-items-center justify-content-center">
+                           <div>
+                               <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                           </div>
+                           <p class="main-text">{{data.main}}</p>
+                       </div>
+                       <div>
+                           <p class="weather-name text-center">{{weatherNameFive}} {{feels_likeFive}} &#176;F</p>
+                       </div>
+                       <div class="d-flex justify-content-evenly">
+                           <div class="weather-main">
+                           <p class="">Humditity</p>
+                           <h6>{{weatherHumditityFive}} %</h6>
+                           </div>
+                           <div class="weather-main">
+                               <p>Temperature</p>
+                               <h6>{{weatherTempFive | number:'1.0-0'}}</h6>
+                           </div>
+                       </div>
+                   </div>
+                    <p></p>
+                </div>
+                
+            <ng-template #noWeatherFive class="content d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center" style="height:100%">
+                 <h6 class="text-white">No Data Found</h6>
+                </div>
+            </ng-template>
+            </div>
+        </div>
+    </div>  
+    <div class="row rowcss bottomcss">
+        <div class="col-md-4">
+            <div class="card">
+                <form [formGroup]="searchWeatherForm6">
+                   <div class="mb-3">
+                       <input type="text" class="form-control" #inputSix placeholder="Enter City Name"  formControlName="citySix" aria-describedby="emailHelp">
+                       <button *ngIf="inputSix.value.length > 0" class="btncss" (click)="searchCity6()" >
+                           Search
+                       </button> 
+                   </div>
+                </form>
+                <div class="content" >
+                    <div *ngIf="weatherDataSix?.length > 0;else noWeatherSix;" >
+                        <div *ngFor = "let data of weatherDataSix;" class="d-flex align-items-center justify-content-center">
+                           <div>
+                               <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                           </div>
+                           <p class="main-text">{{data.main}}</p>
+                       </div>
+                       <div>
+                           <p class="weather-name text-center">{{weatherNameSix}} {{feels_likeSix}} &#176;F</p>
+                       </div>
+                       <div class="d-flex justify-content-evenly">
+                           <div class="weather-main">
+                           <p class="">Humditity</p>
+                           <h6>{{weatherHumdititySix}} %</h6>
+                           </div>
+                           <div class="weather-main">
+                               <p>Temperature</p>
+                               <h6>{{weatherTempSix | number:'1.0-0'}}</h6>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+            
+                <ng-template class="content " #noWeatherSix>
+                    <div class="d-flex justify-content-center align-items-center" style="height:100%">
+                     <h6 class="text-white">No Data Found</h6>
+                    </div>
+                </ng-template>
+            </div>
+            
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <form [formGroup]="searchWeatherForm7">
+                   <div class="mb-3">
+                       <input type="text" class="form-control" #inputSeven placeholder="Enter City Name"  formControlName="citySeven" aria-describedby="emailHelp">
+                       <button *ngIf="inputSeven.value.length > 0" class="btncss" (click)="searchCity7()" >
+                           Search
+                       </button> 
+                   </div>
+                </form>
+                <div class="content" >
+                    <div *ngIf="weatherDataSeven?.length > 0;else noWeatherEight" >
+                        <div *ngFor = "let data of weatherDataSeven;" class="d-flex align-items-center justify-content-center">
+                           <div>
+                               <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                           </div>
+                           <p class="main-text">{{data.main}}</p>
+                       </div>
+                       <div>
+                           <p class="weather-name text-center">{{weatherNameSeven}} {{feels_likeSeven}} &#176;F</p>
+                       </div>
+                       <div class="d-flex justify-content-evenly">
+                           <div class="weather-main">
+                           <p class="">Humditity</p>
+                           <h6>{{weatherHumdititySeven}} %</h6>
+                           </div>
+                           <div class="weather-main">
+                               <p>Temperature</p>
+                               <h6>{{weatherTempSeven | number:'1.0-0'}}</h6>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+                <ng-template class="content" #noWeatherEight>
+                    <div class="d-flex justify-content-center align-items-center"style="height:100%;">
+                        <h6 class="text-white">No Data Found</h6>
+                    </div>
+                </ng-template>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <form [formGroup]="searchWeatherForm8">
+                   <div class="mb-3">
+                       <input type="text" class="form-control" #inputEight placeholder="Enter City Name"  formControlName="cityEight" aria-describedby="emailHelp">
+                       <button *ngIf="inputEight.value.length > 0" class="btncss" (click)="searchCity8()" >
+                           Search
+                       </button> 
+                   </div>
+                </form>
+                <div class="content" >
+                    <div *ngIf="weatherDataEight?.length > 0;else noWeatherEight;" >
+                        <div *ngFor = "let data of weatherDataEight;" class="d-flex align-items-center justify-content-center">
+                           <div>
+                               <img src="http://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="">
+                           </div>
+                           <p class="main-text">{{data.main}}</p>
+                       </div>
+                       <div>
+                           <p class="weather-name text-center">{{weatherNameEight}} {{feels_likeEight}} &#176;F</p>
+                       </div>
+                       <div class="d-flex justify-content-evenly">
+                           <div class="weather-main">
+                           <p class="">Humditity</p>
+                           <h6>{{weatherHumditityEight}} %</h6>
+                           </div>
+                           <div class="weather-main">
+                               <p>Temperature</p>
+                               <h6>{{weatherTempEight | number:'1.0-0'}}</h6>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+                
+            <ng-template #noWeatherEight class="content ">
+                <div class="d-flex justify-content-center align-items-center">
+                 <h6 class="text-white">No Data Found</h6>
+                </div>
+            </ng-template>
+            </div>
+            
+        </div>
+
+
+    </div>
+</div>
